@@ -28,7 +28,7 @@ include "templates/header.php";
     <div class="slider">
         <!-- TODO: Desarrollar el marcado para el slider -->
     </div><!-- .slider -->
-    <div class="products">soy el producto
+    <div class="products">
         <!-- TODO: Desarrollar el marcado para los productos -->
     </div><!-- .products -->
     <div class="load">

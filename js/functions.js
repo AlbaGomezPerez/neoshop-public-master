@@ -20,8 +20,11 @@ window.onload = function () {
 }
 
     function generateProductsHTML(index, item) {
-        return `<div class="item-container">
-                      <div class="item-name" id="">${item.name}</div>
+        return `<div class="product-container">
+                      <img class="product-image" src="${item.image}">
+                      <div class="product-name" id="">${item.name}</div>
+                      <div class="product-price" id="">${item.price}</div>
+                      <div class="product-price" id="">${item.button_text}</div> 
                   </div>`
     }
 
