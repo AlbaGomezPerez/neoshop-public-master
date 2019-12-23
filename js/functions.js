@@ -3,9 +3,21 @@
 const sliderSpace = document.querySelector('.slider');
 const productsSpace = document.querySelector('.products');
 let product = '';
+let slide = '';
 const productsUrl = "../api/products.json";
 const slideUrl = "/api/slides.json";
 
+window.onload = function () {
+    fetch(slideUrl)
+        .then(response => response.json())
+        .then(data => {
+            slide = data;
+
+            data.data.map((item, index) => {
+                sliderSpace.innerHTML += generateSlidesHTML(index, item);
+            });
+        });
+}
 
 window.onload = function () {
     fetch(productsUrl)
@@ -26,6 +38,12 @@ window.onload = function () {
                       <div class="product-price" id="">${item.price}</div>
                       <div class="product-price" id="">${item.button_text}</div> 
                   </div>`
+    }
+
+    function generateSlidesHTML(index, item) {
+    return <ul class="slider">
+            <li id="slide1">En campusMVP</li>
+        </ul>`
     }
 
 
