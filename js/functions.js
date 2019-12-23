@@ -43,15 +43,11 @@ function getDataProducts() {
 
 
     function generateSlidesHTML(index, item) {
-    return `<ulclass="slider">
-            <li id="slide1">En campusMVP</li>
-        </ul>`
+    return `<div class="slider">
+            <img class="slider-image" src=${item.bg_image} id="slide1"></img>
+        </div>`
     }
 
-
-/**
- * TODO: Desarrollar el código del slider
- */
 
 /**
  * TODO: Desarrollar el código para cargar productos por Ajax
