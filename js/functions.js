@@ -16,10 +16,11 @@ window.onload = function () {
             data.data.map((item, index) => {
                 sliderSpace.innerHTML += generateSlidesHTML(index, item);
             });
+            getDataProducts();
         });
 }
 
-window.onload = function () {
+function getDataProducts() {
     fetch(productsUrl)
         .then(response => response.json())
         .then(data => {
@@ -40,8 +41,9 @@ window.onload = function () {
                   </div>`
     }
 
+
     function generateSlidesHTML(index, item) {
-    return <ul class="slider">
+    return `<ulclass="slider">
             <li id="slide1">En campusMVP</li>
         </ul>`
     }
