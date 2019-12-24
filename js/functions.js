@@ -38,17 +38,29 @@ function getDataProducts() {
                       <div class="product-name" id="">${item.name}</div>
                       <div class="product-price" id="">${item.price}</div>
                       <div class="product-price" id="">${item.button_text}</div> 
-                  </div>`
-    }
+                  </div>`}
 
 
     function generateSlidesHTML(index, item) {
-    return `<div class="slider">
-            <img class="slider-image" src=${item.bg_image} id="slide1"></img>
-        </div>`
-    }
+    return `
+        <div class="slider">
+            <img class"slider-image" src=${item.bg_image} id="slide${item.id}"></img>
+        </div>
+`
+}
 
 
 /**
- * TODO: Desarrollar el código para cargar productos por Ajax
+ <div id="slider">
+     <ul>
+         <li>SLIDE 1</li>
+         <li>SLIDE 2</li>
+         <li>SLIDE 3</li>
+         <li>SLIDE 4</li>
+     </ul>
+ </div>
+ <div class="slider_option">
+     <input type="checkbox" id="checkbox">
+     <label for="checkbox">Autoplay Slider</label>
+ </div>
  */

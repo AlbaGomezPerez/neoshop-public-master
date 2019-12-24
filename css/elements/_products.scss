@@ -1,6 +1,26 @@
-// TODO: Desarrollar el CSS para los productos
-.products {
 
+/* PRODUCTS */
+
+.products{
+    background-color: #9EDAD3;
+    margin: auto;
+    margin-top: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.product-container{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin: auto;
+    background-color: #FFCC65;
+}
+
+.product-image{
+    height: 350px;
 }
 
 .load {
