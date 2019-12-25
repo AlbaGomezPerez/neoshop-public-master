@@ -29,8 +29,14 @@ function getDataProducts() {
 
             data.data.map((item, index) => {
                 if (index === 4) {
-                    productsSpace.innerHTML += `<img class="product-campaign" key="4" id="image${item.id}" src="../resources/cta/cta1.jpg">`
+                    productsSpace.innerHTML +=
+                        `<img class="product-campaign1" key="4" id="image${item.id}" src="../resources/cta/cta1.jpg">`
                 }
+                if (index === 7) {
+                    productsSpace.innerHTML +=
+                        `<img class="product-campaign2" key="7" id="image${item.id}" src="../resources/cta/cta2.jpg">`
+                }
+
                 productsSpace.innerHTML += generateProductsHTML(index, item);
             });
         });
