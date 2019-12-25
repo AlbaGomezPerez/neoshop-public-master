@@ -46,9 +46,11 @@ function getDataProducts() {
     function generateProductsHTML(index, item) {
         return `<div class="product-container" key=${index}>
                       <img class="product-image" id="image${item.id}" src="${item.image}">
-                      <div class="product-name" id="">${item.name}</div>
-                      <div class="product-price" id="">${item.price}</div>
-                      <div class="product-price" id="">${item.button_text}</div> 
+                      <div class="productInfo-container">
+                          <div class="product-name" id="">${item.name}</div>
+                          <div class="product-price" id="">${item.price}</div>
+                      </div>
+                      <div class="product-buy" id="">${item.button_text}</div> 
                   </div>`}
 
 
