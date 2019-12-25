@@ -6,6 +6,7 @@ let product = '';
 let slide = '';
 const productsUrl = "../api/products.json";
 const slideUrl = "/api/slides.json";
+const buttonLoad = document.querySelector('.load__button');
 
 window.onload = function () {
     fetch(slideUrl)
@@ -65,7 +66,12 @@ function getDataProducts() {
 `
 }
 
+function loadMoreProducts(){
+    getDataProducts()
+    productsSpace.innerHTML += generateProductsHTML(index, item);
+}
 
+buttonLoad.addEventListener('click', loadMoreProducts)
 /**
  <div class="slider_option">
      <input type="checkbox" id="checkbox">
