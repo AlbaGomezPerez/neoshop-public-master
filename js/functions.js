@@ -26,15 +26,20 @@ function getDataProducts() {
         .then(data => {
             product = data;
 
+
             data.data.map((item, index) => {
+                if (index === 4) {
+                    productsSpace.innerHTML += `<img class="product-campaign" key="4" id="image${item.id}" src="../resources/cta/cta1.jpg">`
+                }
                 productsSpace.innerHTML += generateProductsHTML(index, item);
             });
         });
+
 }
 
     function generateProductsHTML(index, item) {
-        return `<div class="product-container">
-                      <img class="product-image" src="${item.image}">
+        return `<div class="product-container" key=${index}>
+                      <img class="product-image" id="image${item.id}" src="${item.image}">
                       <div class="product-name" id="">${item.name}</div>
                       <div class="product-price" id="">${item.price}</div>
                       <div class="product-price" id="">${item.button_text}</div> 
@@ -43,22 +48,17 @@ function getDataProducts() {
 
     function generateSlidesHTML(index, item) {
     return `
-        <div class="slider">
-            <img class"slider-image" src=${item.bg_image} id="slide${item.id}"></img>
-        </div>
+            <ul class="slider-container${item.id}" key=${index}>
+                <li class="slider-list">
+                    <img class="slider-image" src=${item.bg_image} id="slide${item.id}">
+                </li>
+            </ul>  
+            
 `
 }
 
 
 /**
- <div id="slider">
-     <ul>
-         <li>SLIDE 1</li>
-         <li>SLIDE 2</li>
-         <li>SLIDE 3</li>
-         <li>SLIDE 4</li>
-     </ul>
- </div>
  <div class="slider_option">
      <input type="checkbox" id="checkbox">
      <label for="checkbox">Autoplay Slider</label>
