@@ -1,9 +1,6 @@
 
 /* PRODUCTS */
 
-.wrapper{
-
-}
 .products{
     margin: auto;
     margin-top: 10%;
@@ -84,6 +81,7 @@
 
 .product-buy:hover{
     transform: scale(1.3);
+    transition-duration: 1s;
 }
 
 

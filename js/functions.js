@@ -9,6 +9,11 @@ const slideUrl = "/api/slides.json";
 const buttonLoad = document.querySelector('.load__button');
 
 window.onload = function () {
+    getDataSlider();
+    getDataProducts();
+}
+
+function getDataSlider() {
     fetch(slideUrl)
         .then(response => response.json())
         .then(data => {
