@@ -48,8 +48,8 @@ function getDataProducts() {
         return `<div class="product-container" key=${index}>
                       <img class="product-image" id="image${item.id}" src="${item.image}">
                       <div class="productInfo-container">
-                          <div class="product-name" id="">${item.name}</div>
-                          <div class="product-price" id="">${item.price}</div>
+                          <div class="product-name">${item.name}</div>
+                          <div class="product-price">${item.price}</div>
                       </div>
                       <div class="product-buy" id="">${item.button_text}</div> 
                   </div>`}
@@ -68,7 +68,7 @@ function getDataProducts() {
 
 function loadMoreProducts(){
     getDataProducts()
-    productsSpace.innerHTML += generateProductsHTML(index, item);
+    productsSpace.innerHTML += generateProductsHTML();
 }
 
 buttonLoad.addEventListener('click', loadMoreProducts)
