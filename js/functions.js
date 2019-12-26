@@ -62,11 +62,7 @@ function getDataProducts() {
 
     function generateSlidesHTML(index, item) {
     return `
-            <ul class="slider-container${item.id}" key=${index}>
-                <li class="slider-list">
-                    <img class="slider-image" src=${item.bg_image} id="slide${item.id}">
-                </li>
-            </ul>  
+                    <img class="slider-image" src=${item.bg_image} id="slide${item.id}"> 
             
 `
 }
