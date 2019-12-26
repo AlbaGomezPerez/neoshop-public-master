@@ -11,6 +11,17 @@
     align-items: center;
 }
 
+.products-title{
+    position: absolute;
+    top: 55%;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    font-size: 30px;
+    padding-right: 6%;
+
+}
+
 .product-container{
     margin-left: 2%;
     margin-right: 2%;

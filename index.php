@@ -33,6 +33,7 @@ include "templates/header.php";
     <div class="slider">
         <!-- TODO: Desarrollar el marcado para el slider -->
     </div><!-- .slider -->
+    <p class="products-title">PRODUCTOS</p>
     <div class="products">
     </div>
     <div class="load">
