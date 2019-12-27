@@ -27,11 +27,16 @@ include "templates/header.php";
 
 <main>
     <div class="shop-container">
-    <h1 class="shop-title">My carrito</h1>
+    <h1 class="shop-title">MI CARRITO</h1>
         <div class="info-shop-container">
-            <p>Producto</p>
-            <p>Precio</p>
-            <p>Cantidad</p>
+            <p>PRODUCTO</p>
+            <p>PRECIO</p>
+            <p>CANTIDAD</p>
+        </div>
+        <div class="info-shop-container">
+            <img src="">
+            <p>PRECIO</p>
+            <p>CANTIDAD</p>
         </div>
 
     </div>
