@@ -26,6 +26,7 @@ function getDataSlider() {
             data.data.map((item, index) => {
                 sliderSpace.innerHTML += generateSlidesHTML(index, item);
             });
+            slides = document.querySelectorAll('.slider .slider-image');
             getDataProducts();
         });
 }
@@ -76,21 +77,61 @@ function loadMoreProducts(){
     productsSpace.innerHTML += generateProductsHTML();
 }
 
-function selectSecondSlider(){
-    console.log('soy ese');
-    slider2.classList.add('delay3');
-    slider3.classList.add('delay4');
-    slider4.classList.add('delay1');
-    slider1.classList.add('delay4');
+
+buttonLoad.addEventListener('click', loadMoreProducts);
+
+let controls = document.querySelectorAll('.controls');
+for(var i=0; i<controls.length; i++){
+    controls[i].style.display = 'inline-block';
+}
+
+let slides = document.querySelectorAll('.slider .slider-image');
+let currentSlide = 0;
+let slideInterval = setInterval(nextSlide,2000);
+
+function nextSlide(){
+    goToSlide(currentSlide+1);
+}
+
+function previousSlide(){
+    goToSlide(currentSlide-1);
+}
+
+function goToSlide(n){
+    slides[currentSlide].className = 'slider-image';
+    currentSlide = (n+slides.length)%slides.length;
+    slides[currentSlide].className = 'slider-image showing';
 }
 
 
+let playing = true;
+let pauseButton = document.getElementById('pause');
 
-buttonLoad.addEventListener('click', loadMoreProducts);
-slider2.addEventListener('click', selectSecondSlider);
-/**
- <div class="slider_option">
-     <input type="checkbox" id="checkbox">
-     <label for="checkbox">Autoplay Slider</label>
- </div>
- */
+function pauseSlideshow(){
+    pauseButton.innerHTML = '&#9658;'; // play character
+    playing = false;
+    clearInterval(slideInterval);
+}
+
+function playSlideshow(){
+    pauseButton.innerHTML = '&#10074;&#10074;'; // pause character
+    playing = true;
+    slideInterval = setInterval(nextSlide,2000);
+}
+
+pauseButton.onclick = function(){
+    if(playing){ pauseSlideshow(); }
+    else{ playSlideshow(); }
+};
+
+let next = document.getElementById('next');
+let previous = document.getElementById('previous');
+
+next.onclick = function(){
+    pauseSlideshow();
+    nextSlide();
+};
+previous.onclick = function() {
+    pauseSlideshow();
+    previousSlide();
+}

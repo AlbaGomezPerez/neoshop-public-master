@@ -28,17 +28,22 @@ include "templates/header.php";
     <div class="control-container">
         <!--<a href="#" class="control-prev"><</a>
         <a href="#" class="control-next">></a>-->
-
        <button class="control-button control-button1"></button>
         <button class="control-button control-button2"></button>
        <button class="control-button control-button3"></button>
        <button class="control-button control-button4"></button>
-
     </div>
 
-    <div class="slider">
-        <!-- TODO: Desarrollar el marcado para el slider -->
-    </div><!-- .slider -->
+    <div class="container">
+        <div class="slider">
+            <!-- TODO: Desarrollar el marcado para el slider -->
+        </div><!-- .slider -->
+        <div class="control-buttons">
+            <button class="controls" id="previous">&lt;</button>
+            <button class="controls" id="pause">&#10074;&#10074;</button>
+            <button class="controls" id="next">&gt;</button>
+        </div>
+    </div>
     <p class="products-title">PRODUCTOS</p>
     <div class="products">
     </div>
