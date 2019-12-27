@@ -26,7 +26,15 @@ include "templates/header.php";
     </header>
 
 <main>
-    <p>soy la otra página</p>
+    <div class="shop-container">
+    <h1 class="shop-title">My carrito</h1>
+        <div class="info-shop-container">
+            <p>Producto</p>
+            <p>Precio</p>
+            <p>Cantidad</p>
+        </div>
+
+    </div>
 </main>
 
 
