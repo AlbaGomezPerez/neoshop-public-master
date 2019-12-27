@@ -9,7 +9,7 @@ include "templates/header.php";
     </div><!-- .header__logo -->
 
     <div class="header__shop shop">
-        <a href="#" class="shop__button">
+        <a href="shop.php" class="shop__button">
             <span class="shop__icon"><i class="fas fa-shopping-cart"></i></i></span>
             <span class="shop__text">Carrito</span>
         </a><!-- .shop__button -->
@@ -49,7 +49,6 @@ include "templates/header.php";
 </div><!-- .wrapper -->
 <footer class="footer">
     <p><img src="./resources/logo.png" alt="Neoshop" title="Neoshop" /></p>
-    <p>Prueba técnica para candidatos</p>
 </footer>
 <?php
 include "templates/footer.php";
