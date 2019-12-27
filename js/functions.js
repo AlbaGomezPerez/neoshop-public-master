@@ -7,6 +7,10 @@ let slide = '';
 const productsUrl = "../api/products.json";
 const slideUrl = "/api/slides.json";
 const buttonLoad = document.querySelector('.load__button');
+const slider1 = document.querySelector('.control-button1');
+const slider2 = document.querySelector('.control-button2');
+const slider3 = document.querySelector('.control-button3');
+const slider4 = document.querySelector('.control-button4');
 
 window.onload = function () {
     getDataSlider();
@@ -72,7 +76,18 @@ function loadMoreProducts(){
     productsSpace.innerHTML += generateProductsHTML();
 }
 
-buttonLoad.addEventListener('click', loadMoreProducts)
+function selectSecondSlider(){
+    console.log('soy ese');
+    slider2.classList.add('delay3');
+    slider3.classList.add('delay4');
+    slider4.classList.add('delay1');
+    slider1.classList.add('delay4');
+}
+
+
+
+buttonLoad.addEventListener('click', loadMoreProducts);
+slider2.addEventListener('click', selectSecondSlider);
 /**
  <div class="slider_option">
      <input type="checkbox" id="checkbox">

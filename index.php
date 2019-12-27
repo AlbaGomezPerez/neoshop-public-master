@@ -26,8 +26,14 @@ include "templates/header.php";
 
 <div class="wrapper">
     <div class="control-container">
-        <a href="#" class="control-prev"><</a>
-        <a href="#" class="control-next">></a>
+        <!--<a href="#" class="control-prev"><</a>
+        <a href="#" class="control-next">></a>-->
+
+       <button class="control-button control-button1"></button>
+        <button class="control-button control-button2"></button>
+       <button class="control-button control-button3"></button>
+       <button class="control-button control-button4"></button>
+
     </div>
 
     <div class="slider">

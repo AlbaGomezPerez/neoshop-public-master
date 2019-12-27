@@ -1,37 +1,6 @@
 
 /* SLIDER*/
 
-/*
-.control-container{
-  position: absolute;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  top: 24%;
-  padding-left: 2%;
-  padding-right: 2%;
-  z-index: 1;
-}
-
-.control-next{
-  font-size: 80px;
-  color: white;
-  opacity: 0.8;
-  right: 0;
-  border-radius: 2px 0 0 2px;
-}
-
-.control-prev{
-  font-size: 80px;
-  color: white;
-  cursor: pointer;
-  opacity: 0.8;
-  border-radius: 0 2px 2px 0;
-}
-*/
-
-
-
 .slider{
   width: 100%;
   height: 500px;
@@ -78,4 +47,57 @@
   30% {
     opacity: 0;
   }
+}
+
+
+/* CONTROL SLIDER*/
+
+.control-container{
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  top: 62%;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+/*.control-next{
+  font-size: 80px;
+  color: white;
+  opacity: 0.8;
+  right: 0;
+  border-radius: 10px;
+}
+
+.control-prev{
+  font-size: 80px;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  border-radius: 0 2px 2px 0;
+}*/
+
+.control-button{
+  height: 30px;
+  width: 30px;
+  border-radius: 60%;
+  padding: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+@media all and (max-width: 375px) {
+  .slider {
+    height: 270px;
+  }
+
+
+  .control-container{
+    top: 50%;
+  }
+
+
 }
