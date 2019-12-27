@@ -31,7 +31,6 @@ include "templates/header.php";
         </div><!-- .slider -->
         <div class="control-buttons">
             <button class="controls" id="previous">&lt;</button>
-            <button class="controls" id="pause">&#10074;&#10074;</button>
             <button class="controls" id="next">&gt;</button>
         </div>
     </div>
