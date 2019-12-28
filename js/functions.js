@@ -51,11 +51,26 @@ function getDataProducts() {
                     productsSpace.innerHTML +=
                         `<img class="product-campaign2" key="7" id="image${item.id}" src="../resources/cta/cta2.jpg">`
                 }
-
                 productsSpace.innerHTML += generateProductsHTML(index, item);
             });
+
+            /*const buy = document.querySelectorAll('.product-buy');
+            for (buy)
+            buy.addEventListener('click', addProduct);
+
+            function addProduct(){
+                console.log('añadir');
+            }*/
+            for (let buy of document.querySelectorAll('.product-buy')) {
+                buy.addEventListener('click', addProduct);
+            }
+             function addProduct(){
+                console.log('añadir');
+            }
+
         });
 }
+
 
 
 /**
@@ -94,7 +109,6 @@ buttonLoad.addEventListener('click', loadMoreProducts);
 
 
 /*SLIDER TRANSITION*/
-
 let slides = document.querySelectorAll('.slider .slider-image');
 let currentSlide = 0;
 let slideInterval = setInterval(nextSlide, 4000);
@@ -129,3 +143,12 @@ nextImage.onclick = function () {
 previousImage.onclick = function () {
     previousSlide();
 }
+
+
+/*SHOP BAG SECTION*/
+
+
+
+
+
+
