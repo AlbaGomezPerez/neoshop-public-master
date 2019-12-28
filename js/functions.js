@@ -7,16 +7,15 @@ let slide = '';
 const productsUrl = "../api/products.json";
 const slideUrl = "/api/slides.json";
 const buttonLoad = document.querySelector('.load__button');
-const slider1 = document.querySelector('.control-button1');
-const slider2 = document.querySelector('.control-button2');
-const slider3 = document.querySelector('.control-button3');
-const slider4 = document.querySelector('.control-button4');
 
 window.onload = function () {
     getDataSlider();
     getDataProducts();
 }
 
+/**
+ * get slider images by map
+ */
 function getDataSlider() {
     fetch(slideUrl)
         .then(response => response.json())
@@ -26,17 +25,22 @@ function getDataSlider() {
             data.data.map((item, index) => {
                 sliderSpace.innerHTML += generateSlidesHTML(index, item);
             });
+
+            //execute here because it's necessary wait fetch
             slides = document.querySelectorAll('.slider .slider-image');
             getDataProducts();
         });
 }
 
+/**
+ * get products data by map
+ * include campaign images with position (if)
+ */
 function getDataProducts() {
     fetch(productsUrl)
         .then(response => response.json())
         .then(data => {
             product = data;
-
 
             data.data.map((item, index) => {
                 if (index === 4) {
@@ -51,65 +55,77 @@ function getDataProducts() {
                 productsSpace.innerHTML += generateProductsHTML(index, item);
             });
         });
-
 }
 
-    function generateProductsHTML(index, item) {
-        return `<div class="product-container" key=${index}>
+
+/**
+ * create html products section
+ */
+function generateProductsHTML(index, item) {
+    return `<div class="product-container" key=${index}>
                       <img class="product-image" id="image${item.id}" src="${item.image}">
                       <div class="productInfo-container">
                           <div class="product-name">${item.name}</div>
                           <div class="product-price">${item.price}</div>
                       </div>
                       <div class="product-buy" id="">${item.button_text}</div> 
-                  </div>`}
-
-
-    function generateSlidesHTML(index, item) {
-    return `
-                    <img class="slider-image" src=${item.bg_image} id="slide${item.id}"> 
-            
-`
+                  </div>`
 }
 
-function loadMoreProducts(){
+
+/**
+ * create html slider section
+ * add class "showing" first slide
+ */
+function generateSlidesHTML(index, item) {
+    return `<img class="slider-image ${index === 0 ? 'showing' : ''}" src=${item.bg_image} id="slide${item.id}">`
+}
+
+
+/**
+ * repaint infinitely products section
+ */
+function loadMoreProducts() {
     getDataProducts()
     productsSpace.innerHTML += generateProductsHTML();
 }
 
-
 buttonLoad.addEventListener('click', loadMoreProducts);
 
-let controls = document.querySelectorAll('.controls');
-for(var i=0; i<controls.length; i++){
-    controls[i].style.display = 'inline-block';
-}
+
+/*SLIDER TRANSITION*/
 
 let slides = document.querySelectorAll('.slider .slider-image');
 let currentSlide = 0;
-let slideInterval = setInterval(nextSlide,2000);
+let slideInterval = setInterval(nextSlide, 4000);
+let nextImage = document.getElementById('next');
+let previousImage = document.getElementById('previous');
+let manualControls = document.querySelectorAll('.controls');
 
-function nextSlide(){
-    goToSlide(currentSlide+1);
+for (let i = 0; i < manualControls.length; i++) {
+    manualControls[i].style.display = 'inline-block';
 }
 
-function previousSlide(){
-    goToSlide(currentSlide-1);
+function nextSlide() {
+    goToSlide(currentSlide + 1);
 }
 
-function goToSlide(n){
+function previousSlide() {
+    goToSlide(currentSlide - 1);
+}
+
+function goToSlide(n) {
     slides[currentSlide].className = 'slider-image';
-    currentSlide = (n+slides.length)%slides.length;
+    currentSlide = (n + slides.length) % slides.length;
     slides[currentSlide].className = 'slider-image showing';
 }
 
-
-let next = document.getElementById('next');
-let previous = document.getElementById('previous');
-
-next.onclick = function(){
+/**
+ * get event onclick from rows
+ */
+nextImage.onclick = function () {
     nextSlide();
 };
-previous.onclick = function() {
+previousImage.onclick = function () {
     previousSlide();
 }
