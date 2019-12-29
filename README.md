@@ -1,3 +1,9 @@
+# Personalización del proyecto
+Se planteaba la realización de una página web con productos y un slider en la cabecera. 
+Como bonus, se ha añadido una segunda página (carrito de compra) donde se pintan los objetos guardados en el
+localStorage. 
+
+
 # Neoshop
 
 En este documento se explicará el objetivo que buscamos para desarrollar esta prueba técnica satisfactoriamente.
