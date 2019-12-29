@@ -45,47 +45,42 @@ function getDataProducts() {
             data.data.map((item, index) => {
                 if (index === 4) {
                     productsSpace.innerHTML +=
-                        `<img class="product-campaign1" key="4" id="image${item.id}" src="../resources/cta/cta1.jpg">`
+                        `<img class="product-campaign1" position="4" id="image${item.id}" src="../resources/cta/cta1.jpg">`
                 }
                 if (index === 7) {
                     productsSpace.innerHTML +=
-                        `<img class="product-campaign2" key="7" id="image${item.id}" src="../resources/cta/cta2.jpg">`
+                        `<img class="product-campaign2" position="7" id="image${item.id}" src="../resources/cta/cta2.jpg">`
                 }
                 productsSpace.innerHTML += generateProductsHTML(index, item);
             });
 
-            /*const buy = document.querySelectorAll('.product-buy');
-            for (buy)
-            buy.addEventListener('click', addProduct);
-
-            function addProduct(){
-                console.log('añadir');
-            }*/
             for (let buy of document.querySelectorAll('.product-buy')) {
                 buy.addEventListener('click', addProduct);
             }
-             function addProduct(){
-                console.log('añadir');
-            }
+             function addProduct(event){
+                const idProduct = event.currentTarget.id;
 
+            //filter que coincida con idProduct, en el local storage voy a guardar un array de objetos
+
+            }
         });
 }
-
 
 
 /**
  * create html products section
  */
 function generateProductsHTML(index, item) {
-    return `<div class="product-container" key=${index}>
+    return `<div class="product-container" position=${index}>
                       <img class="product-image" id="image${item.id}" src="${item.image}">
                       <div class="productInfo-container">
                           <div class="product-name">${item.name}</div>
                           <div class="product-price">${item.price}</div>
                       </div>
-                      <div class="product-buy" id="">${item.button_text}</div> 
+                      <div class="product-buy" id="${item.id}">${item.button_text}</div> 
                   </div>`
 }
+
 
 
 /**
@@ -116,6 +111,7 @@ let nextImage = document.getElementById('next');
 let previousImage = document.getElementById('previous');
 let manualControls = document.querySelectorAll('.controls');
 
+/*add inline-block style*/
 for (let i = 0; i < manualControls.length; i++) {
     manualControls[i].style.display = 'inline-block';
 }
@@ -128,6 +124,12 @@ function previousSlide() {
     goToSlide(currentSlide - 1);
 }
 
+
+/**
+ * Remove class "showing" current slide
+ * Get the number of the next slide (% is the rest)
+ * Add class "showing" next slide
+ */
 function goToSlide(n) {
     slides[currentSlide].className = 'slider-image';
     currentSlide = (n + slides.length) % slides.length;
