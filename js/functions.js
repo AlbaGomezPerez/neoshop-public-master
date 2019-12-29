@@ -64,13 +64,13 @@ function getDataProducts() {
  * Find product by id and add it to localStorage
  * @param event
  */
-function addProduct(event){
+function addProduct(event) {
     const productId = event.currentTarget.id;
     const selectedProduct = products.data.find(myProduct => myProduct.id === parseInt(productId))
     const productsCardString = localStorage.getItem("productsCart");
     let productsCardArray = JSON.parse(productsCardString);
 
-    if(productsCardArray === null || productsCardArray === undefined || productsCardArray.length === 0){
+    if (productsCardArray === null || productsCardArray === undefined || productsCardArray.length === 0) {
         productsCardArray = [selectedProduct];
     } else {
         productsCardArray.push(selectedProduct);
@@ -92,8 +92,6 @@ function generateProductsHTML(index, item) {
                       <div class="product-buy" id="${item.id}">${item.button_text}</div> 
                   </div>`
 }
-
-
 
 /**
  * Create html slider section
@@ -128,6 +126,9 @@ for (let i = 0; i < manualControls.length; i++) {
     manualControls[i].style.display = 'inline-block';
 }
 
+/**
+ * Call goToSlide function
+ */
 function nextSlide() {
     goToSlide(currentSlide + 1);
 }
@@ -158,7 +159,6 @@ previousImage.onclick = function () {
     previousSlide();
 }
 
-/*SHOP BAG SECTION*/
 
 
 

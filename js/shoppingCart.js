@@ -2,7 +2,9 @@
 
 const productsSpace = document.querySelector('.info-shop-container');
 
-
+/**
+ * Get localStorage data and parse
+ */
 window.onload = function () {
     const productsCardString = localStorage.getItem("productsCart");
     const productsCardArray = JSON.parse(productsCardString);
