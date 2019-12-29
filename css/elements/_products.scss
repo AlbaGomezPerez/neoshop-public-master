@@ -12,14 +12,11 @@
     justify-content: space-between;
 
     @media all and (min-width: 1000px) {
-        margin-right: 10%;
-        margin-left: 10%;
     }
 }
 
 .products-title{
-    position: absolute;
-    top: 75%;
+    position: relative;
     display: flex;
     width: 100vw;
     justify-content: center;

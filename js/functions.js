@@ -128,16 +128,10 @@ for (let i = 0; i < manualControls.length; i++) {
     manualControls[i].style.display = 'inline-block';
 }
 
-/**
- *
- */
 function nextSlide() {
     goToSlide(currentSlide + 1);
 }
 
-/**
- *
- */
 function previousSlide() {
     goToSlide(currentSlide - 1);
 }
@@ -157,8 +151,12 @@ function goToSlide(n) {
 /**
  * Add event onclick from rows
  */
-nextImage.onclick = nextSlide();
-previousImage.onclick = previousSlide();
+nextImage.onclick = function () {
+    nextSlide();
+};
+previousImage.onclick = function () {
+    previousSlide();
+}
 
 /*SHOP BAG SECTION*/
 
