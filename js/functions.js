@@ -2,7 +2,7 @@
 
 const sliderSpace = document.querySelector('.slider');
 const productsSpace = document.querySelector('.products');
-let product = '';
+let products;
 let slide = '';
 const productsUrl = "../api/products.json";
 const slideUrl = "/api/slides.json";
@@ -40,7 +40,7 @@ function getDataProducts() {
     fetch(productsUrl)
         .then(response => response.json())
         .then(data => {
-            product = data;
+            products = data;
 
             data.data.map((item, index) => {
                 if (index === 4) {
@@ -57,15 +57,31 @@ function getDataProducts() {
             for (let buy of document.querySelectorAll('.product-buy')) {
                 buy.addEventListener('click', addProduct);
             }
-             function addProduct(event){
-                const idProduct = event.currentTarget.id;
-
-            //filter que coincida con idProduct, en el local storage voy a guardar un array de objetos
-
-            }
         });
 }
 
+
+function addProduct(event){
+    const productId = event.currentTarget.id;
+    const selectedProduct = products.data.find(myProduct => myProduct.id === parseInt(productId))
+
+    const productsCardString = localStorage.getItem("productsCart");
+    let productsCardArray = JSON.parse(productsCardString);
+
+    console.log(productsCardString);
+    console.log(productsCardArray);
+
+    if(productsCardArray === null || productsCardArray === undefined || productsCardArray.length === 0){
+        productsCardArray = [selectedProduct];
+    } else {
+        productsCardArray.push(selectedProduct);
+    }
+
+    localStorage.setItem("productsCart", JSON.stringify(productsCardArray));
+
+    //en el local storage voy a guardar un array de objetos
+
+}
 
 /**
  * create html products section
