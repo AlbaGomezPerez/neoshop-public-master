@@ -1,6 +1,5 @@
 <?php
 include "lib/config.php";
-
 include "templates/header.php";
 ?>
 
@@ -27,16 +26,13 @@ include "templates/header.php";
 
 <main>
     <div class="shop-container">
-    <h1 class="shop-title">MI CARRITO</h1>
-        <div class="info-shop-container">
-            <p>PRODUCTO</p>
-            <p>PRECIO</p>
-            <p>CANTIDAD</p>
+        <h1 class="shop-title">MI CARRITO</h1>
+        <div class="products-card-container">
+            <p>Imagen</p>
+            <p>Nombre</p>
+            <p>Precio</p>
         </div>
         <div class="info-shop-container">
-            <img src="">
-            <p>PRECIO</p>
-            <p>CANTIDAD</p>
         </div>
 
     </div>
@@ -49,6 +45,8 @@ include "templates/header.php";
 
 
 
+<script src="/js/shoppingCart.js" ></script>
 
 <?php
 include "templates/footer.php";
+

@@ -14,7 +14,7 @@ window.onload = function () {
 }
 
 /**
- * get slider images by map
+ * Get slider images from the request
  */
 function getDataSlider() {
     fetch(slideUrl)
@@ -33,7 +33,7 @@ function getDataSlider() {
 }
 
 /**
- * get products data by map
+ * Get products data from request
  * include campaign images with position (if)
  */
 function getDataProducts() {
@@ -60,16 +60,15 @@ function getDataProducts() {
         });
 }
 
-
+/**
+ * Find product by id and add it to localStorage
+ * @param event
+ */
 function addProduct(event){
     const productId = event.currentTarget.id;
     const selectedProduct = products.data.find(myProduct => myProduct.id === parseInt(productId))
-
     const productsCardString = localStorage.getItem("productsCart");
     let productsCardArray = JSON.parse(productsCardString);
-
-    console.log(productsCardString);
-    console.log(productsCardArray);
 
     if(productsCardArray === null || productsCardArray === undefined || productsCardArray.length === 0){
         productsCardArray = [selectedProduct];
@@ -78,13 +77,10 @@ function addProduct(event){
     }
 
     localStorage.setItem("productsCart", JSON.stringify(productsCardArray));
-
-    //en el local storage voy a guardar un array de objetos
-
 }
 
 /**
- * create html products section
+ * Create html products section
  */
 function generateProductsHTML(index, item) {
     return `<div class="product-container" position=${index}>
@@ -100,8 +96,8 @@ function generateProductsHTML(index, item) {
 
 
 /**
- * create html slider section
- * add class "showing" first slide
+ * Create html slider section
+ * Add class "showing" first slide
  */
 function generateSlidesHTML(index, item) {
     return `<img class="slider-image ${index === 0 ? 'showing' : ''}" src=${item.bg_image} id="slide${item.id}">`
@@ -109,7 +105,7 @@ function generateSlidesHTML(index, item) {
 
 
 /**
- * repaint infinitely products section
+ * Repaint infinitely products section
  */
 function loadMoreProducts() {
     getDataProducts()
@@ -132,10 +128,16 @@ for (let i = 0; i < manualControls.length; i++) {
     manualControls[i].style.display = 'inline-block';
 }
 
+/**
+ *
+ */
 function nextSlide() {
     goToSlide(currentSlide + 1);
 }
 
+/**
+ *
+ */
 function previousSlide() {
     goToSlide(currentSlide - 1);
 }
@@ -153,15 +155,10 @@ function goToSlide(n) {
 }
 
 /**
- * get event onclick from rows
+ * Add event onclick from rows
  */
-nextImage.onclick = function () {
-    nextSlide();
-};
-previousImage.onclick = function () {
-    previousSlide();
-}
-
+nextImage.onclick = nextSlide();
+previousImage.onclick = previousSlide();
 
 /*SHOP BAG SECTION*/
 

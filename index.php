@@ -27,7 +27,6 @@ include "templates/header.php";
 <div class="wrapper">
     <div class="container">
         <div class="slider">
-            <!-- TODO: Desarrollar el marcado para el slider -->
         </div><!-- .slider -->
         <div class="control-buttons">
             <button class="controls" id="previous">&lt;</button>
@@ -38,12 +37,12 @@ include "templates/header.php";
     <div class="products">
     </div>
     <div class="load">
-        <!-- TODO: BONUS. Desarrollar la funcionalidad para que el botón cargue más productos -->
         <span class="load__button button">Cargar más productos</span>
     </div><!-- .load -->
 </div><!-- .wrapper -->
 <footer class="footer">
     <p><img src="./resources/logo.png" alt="Neoshop" title="Neoshop" /></p>
 </footer>
+    <script src="/js/functions.js" ></script>
 <?php
 include "templates/footer.php";

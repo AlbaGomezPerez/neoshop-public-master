@@ -5,7 +5,6 @@
         <!-- FONT AWESOME -->
         <script src="https://kit.fontawesome.com/2f612e99b2.js"></script>
 
-        <script src="/js/functions.js" ></script>
     </div><!-- .scripts -->
 </body>
 </html>
